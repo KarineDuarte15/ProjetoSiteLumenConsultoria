@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
 All colors MUST be HSL.
 */
 
@@ -43,7 +43,7 @@ All colors MUST be HSL.
 
     --radius: 0.5rem;
 
-    /* Animations */
+    /* Animations (Variáveis não estritamente necessárias aqui, mas podem ajudar) */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-elegant: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -85,6 +85,20 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans; /* Aplica a fonte padrão 'sans' (Poppins) */
+    -webkit-font-smoothing: antialiased; /* Melhora a renderização da fonte */
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth; /* Para rolagem suave com links de âncora (#) */
   }
+}
+
+/* Adicionamos a classe utilitária hover-scale */
+@layer utilities {
+   .hover-scale {
+      @apply transition-transform duration-300 ease-in-out hover:scale-105;
+   }
+   /* Você pode adicionar outras classes de animação aqui se precisar delas reutilizáveis */
+   .animate-fade-in {
+      animation: fade-in 0.6s ease-out forwards;
+   }
 }

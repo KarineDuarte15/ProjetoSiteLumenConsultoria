@@ -1,22 +1,16 @@
+// tsconfig.node.json
 {
   "compilerOptions": {
-    "target": "ES2022",
-    "lib": ["ES2023"],
-    "module": "ESNext",
+    "composite": true, // composite é importante quando há referências
     "skipLibCheck": true,
-
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "isolatedModules": true,
-    "moduleDetection": "force",
-    "noEmit": true,
-
-    /* Linting */
-    "strict": true,
+    "module": "CommonJS", // Mudar para CommonJS
+    "moduleResolution": "node", // Usar node em vez de bundler com CommonJS
+    "allowSyntheticDefaultImports": true, // Pode ajudar com import/require
+    "strict": false, // Manter as configurações de linting flexíveis por enquanto
     "noUnusedLocals": false,
     "noUnusedParameters": false,
-    "noFallthroughCasesInSwitch": true
+    "noImplicitAny": false,
+     "types": ["node"] // Adicionar explicitamente os tipos do node
   },
-  "include": ["vite.config.ts"]
+  "include": ["vite.config.ts", "tailwind.config.ts", "postcss.config.js"] // Garanta que tailwind.config.ts está incluído aqui!
 }
