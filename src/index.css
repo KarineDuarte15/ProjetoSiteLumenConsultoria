@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Lumen Corporate Colors */
+    --background: 0 0% 96%;
+    --foreground: 208 68% 23%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 208 68% 23%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 208 68% 23%;
+
+    /* Primary - Corporate Blue */
+    --primary: 208 68% 23%;
+    --primary-foreground: 0 0% 96%;
+
+    /* Secondary - Light Gray */
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 208 68% 23%;
+
+    /* Muted - Medium Gray */
+    --muted: 0 0% 71%;
+    --muted-foreground: 0 0% 55%;
+
+    /* Accent - Dark Gray */
+    --accent: 0 0% 55%;
+    --accent-foreground: 0 0% 96%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 96%;
+
+    --border: 0 0% 71%;
+    --input: 0 0% 96%;
+    --ring: 208 68% 23%;
+
+    --radius: 0.5rem;
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-elegant: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 208 68% 23%;
+    --foreground: 0 0% 96%;
+
+    --card: 208 65% 20%;
+    --card-foreground: 0 0% 96%;
+
+    --popover: 208 65% 20%;
+    --popover-foreground: 0 0% 96%;
+
+    --primary: 0 0% 96%;
+    --primary-foreground: 208 68% 23%;
+
+    --secondary: 208 60% 30%;
+    --secondary-foreground: 0 0% 96%;
+
+    --muted: 0 0% 55%;
+    --muted-foreground: 0 0% 71%;
+
+    --accent: 0 0% 71%;
+    --accent-foreground: 208 68% 23%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 96%;
+
+    --border: 0 0% 55%;
+    --input: 208 60% 30%;
+    --ring: 0 0% 96%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
