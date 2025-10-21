@@ -7,9 +7,7 @@ import { cn } from '@/lib/utils';
 const BackToTopButton = () => {
     const [isVisible, setIsVisible] = useState(false);
 
-    // Função para verificar a posição do scroll
     const toggleVisibility = () => {
-        // Mostra o botão após rolar 300px para baixo
         if (window.scrollY > 300) {
             setIsVisible(true);
         } else {
@@ -17,19 +15,15 @@ const BackToTopButton = () => {
         }
     };
 
-    // Função para rolar suavemente para o topo
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
-            behavior: 'smooth', // Efeito de rolagem suave
+            behavior: 'smooth',
         });
     };
 
-    // Adiciona e remove o listener de scroll
     useEffect(() => {
         window.addEventListener('scroll', toggleVisibility);
-
-        // Função de limpeza para remover o listener quando o componente desmontar
         return () => {
             window.removeEventListener('scroll', toggleVisibility);
         };
@@ -39,14 +33,16 @@ const BackToTopButton = () => {
         <Button
             size="icon"
             className={cn(
-                "fixed bottom-20 right-6 z-50", // Posição (acima do botão do WhatsApp)
-                "rounded-full h-12 w-12",       // Tamanho e forma
-                "bg-primary hover:bg-primary/90", // Cor primária
-                "text-primary-foreground",        // Cor do ícone
+                "fixed bottom-6 z-50", // Mantém fixo na parte inferior (ajuste 'bottom-6' se precisar de mais espaço do rodapé)
+                "left-1/2 -translate-x-1/2", // *** NOVAS CLASSES PARA CENTRALIZAR HORIZONTALMENTE ***
+                // "right-6", // REMOVE a classe que alinhava à direita
+                "rounded-full h-12 w-12",
+                "bg-primary hover:bg-primary/90",
+                "text-primary-foreground",
                 "shadow-md",
-                "transition-opacity duration-300 ease-in-out", // Transição para aparecer/desaparecer
-                "hover-scale", // Efeito de escala no hover
-                isVisible ? "opacity-100" : "opacity-0 pointer-events-none" // Controla visibilidade
+                "transition-opacity duration-300 ease-in-out",
+                "hover-scale",
+                isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
             )}
             onClick={scrollToTop}
             aria-label="Voltar ao topo"
