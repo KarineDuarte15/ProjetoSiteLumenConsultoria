@@ -1,3 +1,4 @@
+// src/components/Navbar.tsx
 import { useState } from "react";
 import { Link } from "react-router-dom"; // Ou use 'a' tags se não usar routing interno
 import { Menu, X, Linkedin, Instagram } from "lucide-react";
@@ -10,8 +11,8 @@ const navLinks = [
   { label: "Início", href: "#hero" }, // Use IDs das seções ou rotas
   { label: "Serviços", href: "#services" },
   { label: "Sobre Nós", href: "#about" },
+  { label: "Redes Sociais", href: "#social" }, // Verifique se o ID existe na seção SocialMedia
   { label: "Contato", href: "#contact" },
-  { label: "Redes Sociais", href: "#social" },
 ];
 
 const Navbar = () => {
@@ -24,6 +25,9 @@ const Navbar = () => {
      if (element) {
          element.scrollIntoView({ behavior: 'smooth' });
          if (isMobileMenu) setIsOpen(false); // Fecha o menu mobile após clicar
+     } else if (id === '/') { // Adicionado para lidar com o Link "Início" se for rota
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (isMobileMenu) setIsOpen(false);
      }
   };
 
@@ -33,28 +37,24 @@ const Navbar = () => {
       <Button
         key={link.label}
         variant="ghost"
-        className="text-foreground hover:bg-accent hover:text-accent-foreground justify-start md:justify-center text-base font-medium"
+        className="text-foreground hover:bg-accent hover:text-accent-foreground justify-start md:justify-center text-base font-medium transition-colors duration-200" // Garante transição suave
         onClick={() => scrollToSection(link.href, isMobileMenu)}
-        asChild={!isMobileMenu && !link.href.startsWith('#')} // Use Link for actual routes
+        // Removido asChild condicional para simplificar, onClick cuida da rolagem
       >
-         {link.href.startsWith('#') ? (
-             <span>{link.label}</span>
-         ) : (
-             <Link to={link.href}>{link.label}</Link>
-         )}
+         <span>{link.label}</span>
       </Button>
     ))
   );
 
   const renderSocialLinks = () => (
     <>
-      <Button variant="ghost" size="icon" asChild className="hover:text-primary hover-scale">
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+      <Button variant="ghost" size="icon" asChild className="text-foreground hover:text-primary hover-scale transition-colors duration-200">
+        <a href="https://linkedin.com/company/lumenconsultoriaempresarial/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"> {/* LINK ATUALIZADO */}
           <Linkedin className="h-5 w-5" />
         </a>
       </Button>
-      <Button variant="ghost" size="icon" asChild className="hover:text-primary hover-scale">
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <Button variant="ghost" size="icon" asChild className="text-foreground hover:text-primary hover-scale transition-colors duration-200">
+        <a href="https://www.instagram.com/lumenconsultoriaempresarial/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"> {/* LINK ATUALIZADO */}
           <Instagram className="h-5 w-5" />
         </a>
       </Button>
@@ -62,25 +62,28 @@ const Navbar = () => {
   );
 
   return (
+    // Header já configurado como sticky e com fundo translúcido/blur
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-6">
-        <Link to="/" className="flex items-center gap-2 hover-scale" onClick={() => scrollToSection('#hero')}>
+        {/* Link do Logo */}
+        <button onClick={() => scrollToSection('#hero')} className="flex items-center gap-2 hover-scale transition-transform duration-300"> {/* Usando button para rolagem */}
           <img src={lumenLogo} alt="Lumen Logo" className="h-8 w-8 rounded-full" />
-          <span className="font-bold text-lg hidden sm:inline">Lumen Consultoria</span>
-        </Link>
+          <span className="font-bold text-lg hidden sm:inline text-foreground">Lumen Consultoria</span>
+        </button>
 
+        {/* Menu Mobile (Sheet) ou Desktop (Nav) */}
         {isMobile ? (
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" className="text-foreground">
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Abrir menu</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-full max-w-xs bg-background p-6">
                <div className="flex justify-between items-center mb-6">
-                 <span className="font-bold text-lg">Menu</span>
-                 <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
+                 <span className="font-bold text-lg text-foreground">Menu</span>
+                 <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="text-foreground">
                      <X className="h-6 w-6" />
                      <span className="sr-only">Fechar menu</span>
                  </Button>
@@ -94,9 +97,11 @@ const Navbar = () => {
             </SheetContent>
           </Sheet>
         ) : (
-          <nav className="flex items-center space-x-2">
+          <nav className="flex items-center space-x-1"> {/* Reduzi o espaço se necessário */}
             {renderNavLinks()}
-            {renderSocialLinks()}
+            <div className="ml-2 flex items-center space-x-1"> {/* Div separada para ícones sociais */}
+              {renderSocialLinks()}
+            </div>
           </nav>
         )}
       </div>

@@ -1,4 +1,5 @@
 import Navbar from "./Navbar";
+import BackToTopButton from "./BackToTopButton";
 import Footer from "./Footer";
 import WhatsAppButton from "./WhatsAppButton"; // Importe o botão do WhatsApp*/
 
@@ -10,6 +11,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
+      <BackToTopButton />
 
       <main className="flex-grow">{children}</main>
       <Footer />
