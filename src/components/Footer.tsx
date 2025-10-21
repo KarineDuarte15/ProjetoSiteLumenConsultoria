@@ -32,12 +32,12 @@ const Footer = () => {
           {/* Ícones Sociais (Novo Bloco) */}
           <div className="flex items-center space-x-3">
              <Button variant="ghost" size="icon" asChild className="text-primary-foreground hover:bg-white/10 hover:text-white rounded-full hover-scale">
-               <a href="https://linkedin.com/company/lumenconsultoriaempresarial/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+               <a href="https://www.linkedin.com/company/lumenconsult/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                  <Linkedin className="h-5 w-5" />
                </a>
              </Button>
              <Button variant="ghost" size="icon" asChild className="text-primary-foreground hover:bg-white/10 hover:text-white rounded-full hover-scale">
-               <a href="https://www.instagram.com/lumenconsultoriaempresarial/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+               <a href="https://www.instagram.com/lumen_consult/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                  <Instagram className="h-5 w-5" />
                </a>
              </Button>
@@ -52,7 +52,7 @@ const Footer = () => {
             <p className="text-sm text-primary-foreground/80"> {/* Aplica as mesmas classes */}
                Desenvolvido por{' '}
                <a
-                   href="https://www.linkedin.com/in/karineduarte-desenvolvedora/" // Coloque o link correto aqui
+                   href="https://site-karine-duarte-developer.vercel.app/" // Coloque o link correto aqui
                    target="_blank"
                    rel="noopener noreferrer"
                    className="underline hover:text-white transition-colors" // Estilo do link

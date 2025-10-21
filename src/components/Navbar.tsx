@@ -49,12 +49,12 @@ const Navbar = () => {
   const renderSocialLinks = () => (
     <>
       <Button variant="ghost" size="icon" asChild className="text-foreground hover:text-primary hover-scale transition-colors duration-200">
-        <a href="https://linkedin.com/company/lumenconsultoriaempresarial/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"> {/* LINK ATUALIZADO */}
+        <a href="https://www.linkedin.com/company/lumenconsult/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"> {/* LINK ATUALIZADO */}
           <Linkedin className="h-5 w-5" />
         </a>
       </Button>
       <Button variant="ghost" size="icon" asChild className="text-foreground hover:text-primary hover-scale transition-colors duration-200">
-        <a href="https://www.instagram.com/lumenconsultoriaempresarial/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"> {/* LINK ATUALIZADO */}
+        <a href="https://www.instagram.com/lumen_consult/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"> {/* LINK ATUALIZADO */}
           <Instagram className="h-5 w-5" />
         </a>
       </Button>
