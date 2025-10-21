@@ -11,7 +11,7 @@ const About = () => {
       <div className="absolute inset-0 bg-card/95" />
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Coluna Esquerda: Texto */}
           <div data-aos="fade-right"> {/* Animação para a coluna de texto */}
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
