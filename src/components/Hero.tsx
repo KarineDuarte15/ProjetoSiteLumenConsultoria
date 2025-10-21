@@ -2,8 +2,13 @@
 import { Button } from "@/components/ui/button";
 import lumenLogo from "@/assets/lumen-logo.jpeg";
 import heroBuilding from "@/assets/hero-building.jpg";
+import AOS from 'aos';
+import { useEffect } from 'react';
 
 const Hero = () => {
+   
+    useEffect(() => { AOS.init({ duration: 800, once: true, offset: 100 }); }, []);
+
   const scrollToSection = (id: string) => {
     const elementId = id.startsWith('#') ? id.substring(1) : id;
     document.getElementById(elementId)?.scrollIntoView({ behavior: 'smooth' });
@@ -11,26 +16,28 @@ const Hero = () => {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Imagem de fundo */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroBuilding})` }}
       />
+      {/* Overlay de cor */}
       <div className="absolute inset-0 bg-primary/85" />
 
+      {/* Conteúdo Principal (já tem z-10) */}
       <div className="container mx-auto px-6 relative z-10">
-        {/* Usamos data-aos="fade-in" para o container principal */}
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto" data-aos="fade-in">
           <img
             src={lumenLogo}
             alt="Lumen Consultoria Empresarial"
             className="w-40 h-40 mb-8 rounded-full shadow-2xl hover-scale"
-            data-aos="zoom-in" // Efeito de zoom para o logo
-            data-aos-delay="100" // Pequeno delay
+            data-aos="zoom-in"
+            data-aos-delay="100"
           />
 
           <h1
              className="text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mb-6 leading-tight"
-             data-aos="fade-down" // Animação de cima para baixo
+             data-aos="fade-down"
              data-aos-delay="200"
           >
             Lumen Consultoria<br />Empresarial
@@ -38,7 +45,7 @@ const Hero = () => {
 
           <p
              className="text-xl md:text-2xl text-primary-foreground/90 mb-4 max-w-2xl leading-relaxed font-light"
-             data-aos="fade-up" // Animação de baixo para cima
+             data-aos="fade-up"
              data-aos-delay="300"
            >
             Iluminamos o caminho para a excelência empresarial com estratégias
@@ -78,8 +85,8 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* A linha gradiente não precisa de animação */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+      {/* Gradiente Inferior - Adicionar z-0 */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-12" /> {/* <-- Adicionado z-12 aqui */}
     </section>
   );
 };

@@ -33,12 +33,18 @@ const About = () => {
                   Ser referência em promover crescimento do cliente de forma organizada
                   e planejada, com uma cultura sólida e boas práticas sustentáveis.
                 </p>
+                
               </div>
               {/* Valores */}
               <div className="border-l-4 border-primary pl-6" data-aos="fade-right" data-aos-delay="300">
                 <h3 className="text-2xl font-bold text-foreground mb-3">Valores</h3>
                 <ul className="text-lg text-muted-foreground leading-relaxed space-y-2">
                   {/* ... (lista de valores inalterada) ... */}
+                  <li>• Ética e Transparência</li>
+                  <li>• Oportunidade</li>
+                  <li>• Inovação Contínua</li>
+                  <li>• Confraternidade</li>
+                  <li>• Paixão pelo saber e pelo fazer</li>
                 </ul>
               </div>
             </div>
