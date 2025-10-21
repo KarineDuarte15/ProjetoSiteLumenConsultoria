@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
-import defaultTheme from 'tailwindcss/defaultTheme'; // Use import aqui
-import tailwindcssAnimate from "tailwindcss-animate"; // Mantenha este import
+const defaultTheme = require('tailwindcss/defaultTheme');
+const tailwindcssAnimate = require("tailwindcss-animate"); // Use require
 
 export default {
   darkMode: ["class"],

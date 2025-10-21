@@ -94,11 +94,13 @@ All colors MUST be HSL.
 
 /* Adicionamos a classe utilitária hover-scale */
 @layer utilities {
-   .hover-scale {
-      @apply transition-transform duration-300 ease-in-out hover:scale-105;
-   }
-   /* Você pode adicionar outras classes de animação aqui se precisar delas reutilizáveis */
-   .animate-fade-in {
-      animation: fade-in 0.6s ease-out forwards;
-   }
+  .fade-in-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  .fade-in-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

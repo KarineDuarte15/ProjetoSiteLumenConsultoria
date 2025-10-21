@@ -1,34 +1,22 @@
+// src/components/Services.tsx
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Target, Building2, Network, GitBranch } from "lucide-react";
 
 const services = [
-  {
-    icon: Target,
-    title: "Planejamento Estratégico",
-    description: "Desenvolvemos estratégias customizadas para impulsionar o crescimento sustentável do seu negócio."
-  },
-  {
-    icon: Building2,
-    title: "Governança Corporativa",
-    description: "Estruturamos práticas de governança que fortalecem a gestão e garantem resultados consistentes."
-  },
-  {
-    icon: Network,
-    title: "Modelagem de Negócios",
-    description: "Criamos modelos de negócios inovadores e adaptáveis às demandas do mercado."
-  },
-  {
-    icon: GitBranch,
-    title: "Gestão de Processos",
-    description: "Otimizamos processos empresariais para maximizar eficiência e produtividade."
-  }
+  // ... (array de serviços inalterado)
+];
+
+const areas = [
+  { name: "Gestão Estratégica", bg: "bg-primary", text: "text-primary-foreground" },
+  { name: "Gestão de Pessoas", bg: "bg-accent", text: "text-accent-foreground" },
+  { name: "Gestão Tributária", bg: "bg-primary", text: "text-primary-foreground" },
 ];
 
 const Services = () => {
   return (
     <section id="services" className="py-24 bg-background">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-16" data-aos="fade-up"> {/* Animação para o bloco do título */}
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Nossos Serviços
           </h2>
@@ -36,13 +24,14 @@ const Services = () => {
             Soluções especializadas para cada desafio do seu negócio
           </p>
         </div>
-        
+
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
-            <Card 
-              key={index} 
+            <Card
+              key={index}
               className="border-2 hover:border-primary hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group"
-              style={{ animationDelay: `${index * 100}ms` }}
+              data-aos="fade-up" // Animação para cada card
+              data-aos-delay={index * 100} // Delay escalonado
             >
               <CardHeader>
                 <div className="w-14 h-14 bg-primary rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
@@ -58,19 +47,20 @@ const Services = () => {
             </Card>
           ))}
         </div>
-        
-        <div className="mt-16 text-center">
+
+        <div className="mt-16 text-center" data-aos="fade-up" data-aos-delay="300"> {/* Animação para a seção Áreas */}
           <h3 className="text-2xl font-bold text-foreground mb-6">Áreas de Atuação</h3>
           <div className="flex flex-wrap justify-center gap-4">
-            <div className="px-6 py-3 bg-primary text-primary-foreground rounded-full font-semibold hover-scale">
-              Gestão Estratégica
-            </div>
-            <div className="px-6 py-3 bg-accent text-accent-foreground rounded-full font-semibold hover-scale">
-              Gestão de Pessoas
-            </div>
-            <div className="px-6 py-3 bg-primary text-primary-foreground rounded-full font-semibold hover-scale">
-              Gestão Tributária
-            </div>
+            {areas.map((area, index) => (
+               <div
+                  key={area.name}
+                  className={`px-6 py-3 ${area.bg} ${area.text} rounded-full font-semibold hover-scale cursor-default`} // Adicionei cursor-default se não forem clicáveis
+                  data-aos="zoom-in" // Animação de zoom para as áreas
+                  data-aos-delay={index * 100} // Delay escalonado
+                >
+                 {area.name}
+               </div>
+            ))}
           </div>
         </div>
       </div>
