@@ -71,7 +71,7 @@ const SocialMedia = () => {
         {/* Botão para ver perfil */}
         <div className="text-center" data-aos="fade-up" data-aos-delay="400">
           <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-primary-foreground hover-scale">
-            <a href="https://www.instagram.com/lumenconsultoriaempresarial/" target="_blank" rel="noopener noreferrer"> {/* Link Atualizado */}
+            <a href="https://www.instagram.com/lumen_consult/" target="_blank" rel="noopener noreferrer"> {/* Link Atualizado */}
               <Instagram className="mr-2 h-5 w-5" />
               Ver Perfil Completo
             </a>
