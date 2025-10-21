@@ -6,7 +6,7 @@ import AOS from 'aos';
 import { useEffect } from 'react';
 
 const Hero = () => {
-   
+    
     useEffect(() => { AOS.init({ duration: 800, once: true, offset: 100 }); }, []);
 
   const scrollToSection = (id: string) => {
@@ -16,17 +16,21 @@ const Hero = () => {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Imagem de fundo */}
+      {/* 1. Imagem de fundo e Overlay (colocados primeiro no código, z-index negativo) */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat -z-10" // Garante que fique atrás
         style={{ backgroundImage: `url(${heroBuilding})` }}
       />
-      {/* Overlay de cor */}
-      <div className="absolute inset-0 bg-primary/85" />
+      <div className="absolute inset-0 bg-primary/85 -z-10" /> {/* Garante que fique atrás */}
 
-      {/* Conteúdo Principal (já tem z-10) */}
-      <div className="container mx-auto px-6 relative z-10">
+       {/* 2. Gradiente Inferior (colocado antes do conteúdo, z-index 0 ou 1) */}
+       <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-background to-transparent z-0" />
+
+
+      {/* 3. Conteúdo Principal (colocado por último no código, z-index maior) */}
+      <div className="container mx-auto px-6 pb-24 relative z-10">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto" data-aos="fade-in">
+          {/* ... Logo ... */}
           <img
             src={lumenLogo}
             alt="Lumen Consultoria Empresarial"
@@ -35,6 +39,7 @@ const Hero = () => {
             data-aos-delay="100"
           />
 
+          {/* ... Título ... */}
           <h1
              className="text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mb-6 leading-tight"
              data-aos="fade-down"
@@ -43,6 +48,7 @@ const Hero = () => {
             Lumen Consultoria<br />Empresarial
           </h1>
 
+          {/* ... Textos ... */}
           <p
              className="text-xl md:text-2xl text-primary-foreground/90 mb-4 max-w-2xl leading-relaxed font-light"
              data-aos="fade-up"
@@ -51,7 +57,6 @@ const Hero = () => {
             Iluminamos o caminho para a excelência empresarial com estratégias
             inovadoras e soluções personalizadas
           </p>
-
           <p
              className="text-lg md:text-xl text-primary-foreground/80 mb-12 max-w-2xl leading-relaxed italic"
              data-aos="fade-up"
@@ -60,6 +65,7 @@ const Hero = () => {
             "Crescer é uma escolha. Escolha dar o próximo passo."
           </p>
 
+          {/* ... Botões ... */}
           <div
             className="flex flex-col sm:flex-row gap-4"
             data-aos="fade-up"
@@ -85,8 +91,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Gradiente Inferior - Adicionar z-0 */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10" /> {/* Tente z-10 aqui, deve ficar abaixo do z-20 do conteúdo */}
     </section>
   );
 };

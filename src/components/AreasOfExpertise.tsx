@@ -57,9 +57,8 @@ const AreasOfExpertise = () => {
                <h4 className="text-xl font-semibold mb-2">{area.name}</h4>
                <p className="text-primary-foreground/80 text-center mb-5 flex-grow">{area.description}</p>
                <Button
-                  // Classes revisadas para garantir fundo branco e texto azul
-                  variant="secondary" // Usar a variant secondary que já tem as cores certas (bg-secondary = cinza claro/branco, text-secondary-foreground = azul escuro)
-                  className="bg-primary-foreground hover:bg-primary-foreground/90 text-primary hover-scale animate-pulse-blue w-full md:w-auto mt-auto" // Correção explícita
+                  variant="outline"
+                  className="bg-white text-primary hover:bg-white/90 border-none hover:scale-105 transition-transform font-medium shadow-sm"
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   Saiba Mais
