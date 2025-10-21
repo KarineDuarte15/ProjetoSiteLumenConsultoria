@@ -86,7 +86,7 @@ const Hero = () => {
       </div>
 
       {/* Gradiente Inferior - Adicionar z-0 */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-12" /> {/* <-- Adicionado z-12 aqui */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10" /> {/* Tente z-10 aqui, deve ficar abaixo do z-20 do conteúdo */}
     </section>
   );
 };

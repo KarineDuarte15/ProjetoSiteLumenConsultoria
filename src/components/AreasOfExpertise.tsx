@@ -41,7 +41,7 @@ const AreasOfExpertise = () => {
         </div>
 
         {/* Grid com as Áreas */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto" data-aos="fade-up" data-aos-delay="200">
           {areas.map((area, index) => (
              <div
                 key={area.name}
