@@ -103,7 +103,7 @@ const Contact = () => {
         </div>
 
         {/* Grid Principal (Formulário e Informações) */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 max-w-6xl mx-auto"> {/* Aumentei o gap em LG */}
 
           {/* Coluna do Formulário */}
           <div className="animate-fade-in lg:animate-slide-in-left"> {/* Adiciona animação */}
