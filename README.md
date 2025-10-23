@@ -1,73 +1,62 @@
-# Welcome to your Lovable project
+# Website Institucional - Lumen Consultoria Brasil
 
-## Project info
+<img src="src/assets/lumen-logo.jpeg" alt="Logo Lumen Consultoria Brasil" width="150"/>
 
-**URL**: https://lovable.dev/projects/13b89987-6a4a-4522-9b5c-b07653005593
+Este repositório contém o código-fonte do site institucional desenvolvido para a Lumen Consultoria Brasil, uma empresa especializada em soluções contábeis e financeiras. O site visa apresentar os serviços oferecidos, a equipa e facilitar o contacto com potenciais clientes.
 
-## How can I edit this code?
+**Visita o site:** [https://www.lumenconsultoriabrasil.com.br/](https://www.lumenconsultoriabrasil.com.br/)
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## ✨ Funcionalidades Principais
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/13b89987-6a4a-4522-9b5c-b07653005593) and start prompting.
+* **Secção Hero:** Introdução visualmente apelativa com animação de digitação para destacar os serviços.
+* **Sobre Nós:** Apresentação da empresa, seus valores e missão.
+* **Serviços:** Descrição detalhada dos serviços oferecidos pela consultoria.
+* **Áreas de Atuação:** Destaque para as áreas específicas de especialização.
+* **Contacto:** Formulário e informações para contacto direto com a empresa.
+* **Navegação:** Menu de navegação claro e funcional, com design responsivo.
+* **Botão WhatsApp:** Acesso rápido para contacto via WhatsApp.
+* **Botão Voltar ao Topo:** Facilita a navegação em páginas longas.
+* **Componentes Shadcn/ui:** Utilização de componentes pré-construídos para agilizar o desenvolvimento da interface.
+* **Animações:** Efeitos visuais suaves com Framer Motion.
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 🚀 Tecnologias Utilizadas
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+* **Build Tool:** [Vite](https://vitejs.dev/)
+* **Framework/Biblioteca UI:** [React](https://reactjs.org/)
+* **Linguagem:** [TypeScript](https://www.typescriptlang.org/)
+* **Estilização:** [Tailwind CSS](https://tailwindcss.com/)
+* **Componentes UI:** [Shadcn/ui](https://ui.shadcn.com/)
+* **Animações:** [Framer Motion](https://www.framer.com/motion/)
+* **Animação de Texto:** [Typed.js](https://github.com/mattboldt/typed.js/) (via react-type-animation ou similar)
+* **Ícones:** [Lucide React](https://lucide.dev/) (geralmente usado com Shadcn)
+* **Containerização:** [Docker](https://www.docker.com/) (mencionado na descrição do projeto no portfólio)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## ⚖️ Licença e Direitos Autorais
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+**Aviso Explícito:** Adicionar o texto ao README.md torna explícita a tua intenção de reservar os direitos sobre a identidade visual, desencorajando cópias e deixando clara a tua posição.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+O código-fonte deste projeto está disponível para consulta e aprendizado. No entanto, a identidade visual do site, incluindo, mas não se limitando ao logótipo, esquema de cores, layout, tipografia e imagens de perfil/eventos, são propriedade intelectual de Lumen Consultoria Brasil e **não podem ser copiados ou reproduzidos** sem permissão explícita.
 
-# Step 3: Install the necessary dependencies.
-npm i
+Copyright © 2025 Lumen Consultoria Brasil. Todos os direitos reservados.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+---
 
-**Edit a file directly in GitHub**
+## 🚀 Deployment
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Este site foi feito utilizando Vite e pode ser facilmente publicado em plataformas como Vercel, Netlify, GitHub Pages, entre outras que suportam aplicações estáticas ou baseadas em Node.js.
 
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/13b89987-6a4a-4522-9b5c-b07653005593) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Para gerar a build de produção:
+```bash
+npm run build
+# ou
+yarn build
+# ou
+pnpm build
+# ou
+bun run build
